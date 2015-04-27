@@ -1,7 +1,7 @@
-FROM ruby:2.2.2
+FROM ruby:2.0.0
 
-# throw errors if Gemfile has been modified since Gemfile.lock
-RUN bundle config --global frozen 1
+# don't throw errors if Gemfile has been modified since Gemfile.lock
+RUN bundle config --global frozen 0
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
